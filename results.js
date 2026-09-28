@@ -437,6 +437,6 @@ startOver.addEventListener("click", function() {
 
     localStorage.removeItem("onCueChoices");
 
-    window.location.href = "index.html";
+    window.location.href = "checkin.html";
 
 });
