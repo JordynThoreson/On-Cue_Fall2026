@@ -2,6 +2,34 @@ const results = document.querySelector("#results");
 const startOver = document.querySelector("#startOver");
 const savedChoices = localStorage.getItem("onCueChoices");
 
+
+function getContentCategory(show) {
+    const genres = show.genres || [];
+
+    const matureGenres = [
+        "Adult",
+        "Horror",
+        "Crime",
+        "Thriller"
+    ];
+
+    if (matureGenres.some(function(genre) {
+        return genres.includes(genre);
+    })) {
+        return "Potentially mature";
+    }
+
+    if (
+        genres.includes("Family") ||
+        genres.includes("Children")
+    ) {
+        return "Family-oriented";
+    }
+
+    return "Unclassified";
+}
+
+
 if (!savedChoices) {
 
     results.innerHTML = `
@@ -75,6 +103,16 @@ async function getShows(choices) {
 
 
             if (!fitsPreferences) {
+                return false;
+            }
+
+
+            const contentCategory = getContentCategory(show);
+
+            if (
+                choices.watching === "family" &&
+                contentCategory !== "Family-oriented"
+            ) {
                 return false;
             }
 
@@ -192,40 +230,6 @@ async function getShows(choices) {
                  show.genres.includes("Drama"))) {
 
                 score += 2;
-
-            }
-
-
-            let contentRating = "General";
-
-
-            if (show.genres.includes("Horror") ||
-                show.genres.includes("Thriller") ||
-                show.genres.includes("Crime")) {
-
-                contentRating = "Mature";
-
-            } else if (show.genres.includes("Comedy") ||
-                       show.genres.includes("Family") ||
-                       show.genres.includes("Children")) {
-
-                contentRating = "Family-friendly";
-
-            }
-
-
-            show.contentRating = contentRating;
-
-
-            if (choices.watching === "family") {
-
-                if (contentRating === "Family-friendly") {
-                    score += 4;
-                }
-
-                if (contentRating === "Mature") {
-                    score -= 4;
-                }
 
             }
 
