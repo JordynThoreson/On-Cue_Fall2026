@@ -4,38 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="styles.css">
     <title>OnCue - Welcome</title>
 </head>
 
-<body>
+<body class="welcome-page">
 
     <h1>OnCue</h1>
 
     <h2>Welcome</h2>
 
+    <img
+        src="images/erik-mclean-U-Vu_r6qyyU-unsplash.jpg"
+        alt=""
+        class="welcome-hero"
+    >
+
     <p>
         Looking for something to watch?
     </p>
-
 
     <button id="startButton">
         Get Started
     </button>
 
-
     <script>
-
         const startButton = document.querySelector("#startButton");
 
         startButton.addEventListener("click", function() {
-
             window.location.href = "checkin.html";
-
         });
-
     </script>
 
 </body>
-
 </html>

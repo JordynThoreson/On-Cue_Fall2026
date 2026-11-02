@@ -4,44 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="styles.css">
     <title>OnCue - Your Picks</title>
 </head>
 
-<body>
+<body class="results-page">
 
-    <h1>OnCue</h1>
+    <header class="site-header">
+        <h1>OnCue</h1>
+    </header>
 
     <h2>Your top picks</h2>
 
+    <main>
+        <div id="results">
+            <p>Finding your picks...</p>
+        </div>
 
-    <div id="results">
+        <button id="startOver" type="button">Try Again</button>
+    </main>
 
-        <p>
-            Finding your picks...
-        </p>
+    <dialog id="showDialog">
+        <div class="dialog-content">
+            <button id="closeDialog" class="close-dialog" type="button"
+                aria-label="Close">×</button>
+            <h3 id="dialogTitle"></h3>
+            <div id="dialogSummary"></div>
+        </div>
+    </dialog>
 
-    </div>
-
-
-    <br>
-
-
-    <button id="startOver">
-        Try Again
-    </button>
-
-
-    <p>
+    <p class="tvmaze-credit">
         TV data provided by
-        <a href="https://www.tvmaze.com/" target="_blank">
+        <a href="https://www.tvmaze.com/" target="_blank" rel="noopener">
             TVmaze
         </a>.
     </p>
 
-
     <script src="results.js"></script>
 
 </body>
-
 </html>
