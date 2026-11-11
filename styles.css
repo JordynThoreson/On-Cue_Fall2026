@@ -7,8 +7,8 @@
     --light-gray: #eeeeee;
     --background: #ffffff;
 
-    --logo-image: url("Images/OnCue_Logo-Purple.png");
-    --footer-image: url("Images/OnCue_colors.png");
+    --logo-image: url("Images/OnCue_Logo.webp");
+    --footer-image: url("Images/OnCue_Footer.png");
 }
 
 /* All pages */
@@ -121,7 +121,7 @@ body::after {
     background-image: var(--footer-image);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 200% auto;
+    background-size: 100% auto;
 }
 
 /* Welcome */
