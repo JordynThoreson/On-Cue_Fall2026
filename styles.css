@@ -3,7 +3,7 @@
     --coral: #f15043;
     --white: #ffffff;
     --black: #222222;
-    --gray: #888888;
+    --gray: #555555;
     --light-gray: #eeeeee;
     --background: #ffffff;
 
@@ -27,10 +27,8 @@ body {
     min-height: 100vh;
     min-height: 100svh;
     margin: 0;
-
     background-color: var(--background);
     color: var(--black);
-
     font-family: "Cabin", sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -52,18 +50,15 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 100%;
     height: 85px;
     margin: 0;
     padding: 0;
-
     background-color: var(--purple);
     background-image: var(--logo-image);
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto 55px;
-
     color: transparent;
     font-size: 0;
 }
@@ -72,10 +67,8 @@ h2 {
     width: 100%;
     margin: 0;
     padding: 7px 20px;
-
     background-color: var(--coral);
-    color: var(--white);
-
+    color: var(--black);
     font-size: 21px;
     font-weight: 400;
     line-height: 1.3;
@@ -84,24 +77,19 @@ h2 {
 
 button {
     display: block;
-
     width: calc(100% - 48px);
     max-width: 360px;
     min-height: 52px;
     margin: 28px auto;
     padding: 12px 24px;
-
     border: none;
     border-radius: 50px;
-
     background-color: var(--purple);
     color: var(--white);
-
     font-size: 18px;
     cursor: pointer;
-
     transition: background-color 0.2s ease,
-                transform 0.2s ease;
+        transform 0.2s ease;
 }
 
 button:hover {
@@ -126,12 +114,10 @@ button:disabled {
 body::after {
     content: "";
     display: block;
-
     width: 100%;
     height: 50px;
     min-height: 50px;
     margin-top: auto;
-
     background-image: var(--footer-image);
     background-repeat: no-repeat;
     background-position: center;
@@ -150,13 +136,11 @@ body:has(#startButton) {
 
 .welcome-page .welcome-hero {
     display: block;
-
     width: 100%;
     max-width: none;
     height: 260px;
     margin: 0;
     padding: 0;
-
     object-fit: cover;
     object-position: center;
 }
@@ -184,11 +168,9 @@ body:has(#findButton) h2 {
 
 body:has(#findButton) label {
     display: block;
-
     width: calc(100% - 48px);
     max-width: 420px;
     margin: 12px auto 4px;
-
     color: var(--black);
     font-size: 17px;
     text-align: left;
@@ -196,16 +178,13 @@ body:has(#findButton) label {
 
 body:has(#findButton) select {
     display: block;
-
     width: calc(100% - 48px);
     max-width: 420px;
     height: 48px;
     margin: 0 auto;
     padding: 0 42px 0 18px;
-
     border: 1px solid #dddddd;
     border-radius: 50px;
-
     background-color: var(--white);
     color: var(--gray);
     font-size: 16px;
@@ -252,25 +231,21 @@ body:has(#findButton) button {
 
 .recommendation-card {
     display: grid;
-
     grid-template-columns: 38% 1fr;
     column-gap: 16px;
     row-gap: 12px;
     align-items: start;
-
     padding: 18px 0;
     margin-bottom: 18px;
-
     border-bottom: 1px solid var(--light-gray);
 }
 
 .show-poster {
     grid-column: 1;
     grid-row: 1 / 3;
-
     width: 100%;
     height: auto;
-
+    aspect-ratio: 210 / 295;
     border-radius: 8px;
     object-fit: cover;
 }
@@ -282,7 +257,6 @@ body:has(#findButton) button {
 
 .show-details h3 {
     margin: 0 0 10px;
-
     color: var(--purple);
     font-size: 19px;
     font-weight: 400;
@@ -290,7 +264,6 @@ body:has(#findButton) button {
 
 .show-details p {
     margin: 7px 0;
-
     color: #555555;
     font-size: 14px;
     line-height: 1.4;
@@ -299,14 +272,15 @@ body:has(#findButton) button {
 .learn-more {
     grid-column: 2;
     grid-row: 2;
-
     justify-self: start;
     align-self: end;
-
+    width: auto;
+    min-height: 0;
+    margin: 0;
     padding: 0;
     border: none;
+    border-radius: 0;
     background: none;
-
     color: var(--purple);
     font-size: 14px;
     text-decoration: underline;
@@ -314,28 +288,37 @@ body:has(#findButton) button {
     white-space: nowrap;
 }
 
+.learn-more:hover {
+    background: none;
+    color: var(--coral);
+}
+
+.feedback-label {
+    grid-column: 1 / -1;
+    display: block;
+    margin: 8px 0 -6px;
+    color: var(--black);
+    font-size: 14px;
+    text-align: left;
+}
+
 .feedback-select {
     grid-column: 1 / -1;
     grid-row: 3;
-
     display: block;
     width: 100%;
     min-height: 48px;
     padding: 10px 14px;
-
     border: 1px solid #cccccc;
     border-radius: 25px;
-
     background-color: var(--white);
     color: var(--gray);
-
     font-size: 14px;
 }
 
 .feedback-message {
     grid-column: 1 / -1;
     margin: 0;
-
     color: var(--purple);
     font-size: 14px;
 }
@@ -360,16 +343,13 @@ body:has(#findButton) button {
     position: fixed;
     inset: 0;
     margin: auto;
-
     width: 85%;
     max-width: 380px;
     max-height: 80vh;
     overflow-y: auto;
     padding: 40px 25px 25px;
-
     border: none;
     border-radius: 15px;
-
     color: #555555;
     font-family: "Cabin", sans-serif;
 }
@@ -384,7 +364,6 @@ body:has(#findButton) button {
 
 .dialog-content h3 {
     margin: 0 0 15px;
-
     color: var(--purple);
     font-size: 21px;
     font-weight: 400;
@@ -399,23 +378,18 @@ body:has(#findButton) button {
     position: absolute;
     top: -32px;
     right: -15px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 32px;
     height: 32px;
     min-height: 0;
     margin: 0;
     padding: 0;
-
     border: none;
     border-radius: 0;
-
     background: none;
     color: var(--purple);
-
     font-size: 28px;
     cursor: pointer;
 }
@@ -491,11 +465,9 @@ body:has(#findButton) button {
         grid-template-columns: 1fr 1fr;
         column-gap: 55px;
         row-gap: 24px;
-
         width: 85%;
         max-width: 1000px;
         margin: 25px auto 40px;
-
         align-items: center;
         text-align: left;
     }
@@ -574,11 +546,9 @@ body:has(#findButton) button {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto auto auto;
         row-gap: 12px;
-
         align-items: start;
         padding: 20px;
         margin: 0;
-
         border: 1px solid var(--light-gray);
         border-radius: 12px;
     }
@@ -586,12 +556,10 @@ body:has(#findButton) button {
     .show-poster {
         grid-column: 1;
         grid-row: 1;
-
         display: block;
         width: 100%;
         max-height: 360px;
         margin: 0 auto;
-
         object-fit: contain;
         border-radius: 8px;
     }
@@ -609,14 +577,20 @@ body:has(#findButton) button {
     .learn-more {
         grid-column: 1;
         grid-row: 3;
-
         justify-self: center;
         align-self: center;
     }
 
-    .feedback-select {
+    .feedback-label {
         grid-column: 1;
         grid-row: 4;
+        margin: 0;
+        text-align: center;
+    }
+
+    .feedback-select {
+        grid-column: 1;
+        grid-row: 5;
         width: 100%;
     }
 
