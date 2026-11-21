@@ -295,16 +295,16 @@ body:has(#findButton) button {
 
 .feedback-label {
     grid-column: 1 / -1;
-    display: block;
-    margin: 8px 0 -6px;
+    grid-row: 3;
+    margin: 0;
     color: var(--black);
-    font-size: 14px;
+    font-size: 15px;
     text-align: left;
 }
 
 .feedback-select {
     grid-column: 1 / -1;
-    grid-row: 3;
+    grid-row: 4;
     display: block;
     width: 100%;
     min-height: 48px;
@@ -402,10 +402,25 @@ body:has(#findButton) button {
 
 /* Mobile */
 
+
+/* Mobile */
+
 @media (max-width: 480px) {
 
     body:has(#findButton) label {
         font-size: 16px;
+    }
+
+    .recommendation-card {
+        grid-template-rows: auto auto auto auto;
+    }
+
+    .feedback-label {
+        grid-row: 3;
+    }
+
+    .feedback-select {
+        grid-row: 4;
     }
 
 }
